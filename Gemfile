@@ -28,7 +28,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
 
 # Use Haml for erb.haml views
-gem 'haml'
+gem 'haml-rails'
+
+# User OmniAuth for mixi authentication
+gem 'omniauth-mixi'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -45,7 +48,7 @@ group :development, :test do
 	
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
-	
+
 end
 
 # Use ActiveModel has_secure_password
