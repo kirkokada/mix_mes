@@ -9,6 +9,7 @@
   <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 <body>
+	<%= render "layouts/navbar" %>
 	<div class="container-fluid">
 		<% flash.each do |key, value| %>
 			<%= content_tag :div, value, class: "alert alert-#{key}" %>

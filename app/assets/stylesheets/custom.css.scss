@@ -32,7 +32,7 @@ textarea {
 	margin-bottom: 10px;
 }
 
-.hero-unit {
+.jumbotron {
 	background: #eee;
 	width: 90%;
 	display: inline-block;
@@ -40,26 +40,61 @@ textarea {
 	margin-left: 5%;
 	margin-right: 5%;
 	padding-bottom: 5px;
+	border-radius: 10px;
 	@include box_sizing;
 }
 
 // Typography
 
 h1, h2, h3, h4, h5, h6 {
-	line-height: 1;
+	line-height: 1.2;
 }
 
 h1 {
-	font-size: 3em;
-	letter-spacing: -2px;
+	font-size: 300%;
+	letter-spacing: 2px;
 	margin-bottom: 30px;
 	text-align: center;
 }
 
 h2 {
-	font-size: 1.2em;
+	font-size: 120%;
 	letter-spacing: -1px;
 	margin-bottom: 10px;
 	text-align: center;
 	font-weight: normal;
+}
+
+// Navigation
+
+.navbar-default {
+	background-color: #F5DA81;
+}
+
+.navbar-nav {
+	li {
+		a {
+			color: #FFF !important;
+			font-size: 120%;
+			&:hover {
+				color: #000;
+			}
+		}
+	}
+}
+
+.navbar-brand {
+	color: #FFF !important;
+	font-weight: bold;
+	font-size: 200%;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: #FFF;
+}
+
+.icon-bar {
+	background-color: #FFF !important;
 }
