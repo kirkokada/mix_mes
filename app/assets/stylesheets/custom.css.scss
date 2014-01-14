@@ -1,3 +1,7 @@
+// Custom Colors
+$orange-light: #F5DA81;
+$dropdown-bg: $orange-light !default;
+
 @import "bootstrap";
 
 @mixin box_sizing {
@@ -68,7 +72,7 @@ h2 {
 // Navigation
 
 .navbar-default {
-	background-color: #F5DA81;
+	background-color: $orange-light;
 }
 
 .navbar-nav {

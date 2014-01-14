@@ -3,6 +3,8 @@ MixMes::Application.routes.draw do
 
   get 'auth/:provider/callback' => "sessions#create"
 
+  delete '/signout' => "sessions#destroy"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
