@@ -1,8 +1,12 @@
 module SessionsHelper
-	def sign_in(user)
+
+	# Accepts user and OmniAuth hash as arguments
+	def sign_in(user, auth_hash)
 		remember_token = User.new_token
 		cookies.permanent[:remember_token] = remember_token
-		user.update_attribute(:remember_token, User.encrypt(remember_token))
+		user.update_attributes(remember_token: User.encrypt(remember_token),
+			                     access_token: auth_hash["credentials"]["token"],
+			                     refresh_token: auth_hash["credentials"]["refresh_token"])
 		self.current_user = user
 	end
 
@@ -26,5 +30,9 @@ module SessionsHelper
 
 	def current_user?(user)
 		user == current_user
+	end
+
+	def signed_in_user
+		redirect_to root_path unless signed_in?
 	end
 end

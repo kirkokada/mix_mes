@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114015645) do
+ActiveRecord::Schema.define(version: 20140115071319) do
+
+  create_table "messages", force: true do |t|
+    t.integer  "user_id"
+    t.string   "mid"
+    t.string   "time_sent"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "conversant_uid"
+  end
+
+  add_index "messages", ["mid"], name: "index_messages_on_mid"
+  add_index "messages", ["time_sent"], name: "index_messages_on_time_sent"
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "users", force: true do |t|
     t.integer  "uid"
@@ -20,6 +34,8 @@ ActiveRecord::Schema.define(version: 20140114015645) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_token"
+    t.string   "access_token"
+    t.string   "refresh_token"
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"

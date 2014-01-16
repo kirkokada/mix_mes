@@ -31,8 +31,11 @@ gem 'jbuilder', '~> 1.0.1'
 # Use Haml for erb.haml views
 gem 'haml-rails'
 
-# User OmniAuth for mixi authentication
+# Use OmniAuth for mixi authentication
 gem 'omniauth-mixi'
+
+# Use HTTParty to make API calls
+gem 'httparty'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

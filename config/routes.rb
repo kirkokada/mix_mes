@@ -1,4 +1,6 @@
 MixMes::Application.routes.draw do
+  resources :messages
+
   root 'static_pages#home'
 
   get 'auth/:provider/callback' => "sessions#create"

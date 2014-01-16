@@ -1,0 +1,9 @@
+<div class="container-fluid">
+		<div class="span10 offset2">
+			<% @messages.each do |message| %>
+				<div>
+					<h2><%= link_to message["title"], message["sender"]["id"] %></h2>
+				</div>
+			<% end %>
+		</div>
+</div>
